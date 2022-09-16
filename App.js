@@ -16,10 +16,12 @@ class App extends Component {
       button3Enabled: true,
     }
   }
-//cia xz ciuju ne taiip bet kazkas gal i ta puse, spalvos uzpisa nx
-  // changeColor= () => {
-  //   this.setState({'buttonEnabled': this.state.buttonEnabled = false})
-  // }
+
+  changeColor = () =>{
+    this.setState(previousState => {
+      return {button1Enabled: !previousState.button1Enabled}
+    });
+  };
 
   render(){
 
@@ -31,7 +33,7 @@ class App extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.rect1}>
-          <Text style={styles.text1}>Text1</Text>
+          <Text style={styles.text1}>{this.state.buttonEnabled?"Labas":"krabas"}</Text>
           <Text style={styles.text2}>Text2</Text>
           <Text style={styles.text3}>Text3</Text>
           <Text style={styles.text4}>Text4</Text>
@@ -39,7 +41,9 @@ class App extends Component {
         <View style={styles.rect}>
           <View style={styles.cupertinoButtonGreyRow}>
             <CupertinoButtonGrey
-              style={styles.cupertinoButtonGrey}>
+              style={styles.cupertinoButtonGrey} onPress={() => {
+                this.setState({buttonEnabled: false})
+              }} disabled={!this.state.buttonEnabled}>
             </CupertinoButtonGrey>
             <CupertinoButtonGrey1
               style={styles.cupertinoButtonGrey1}
@@ -135,7 +139,13 @@ const styles = StyleSheet.create({
     marginTop: 72,
     marginLeft: 54,
     marginRight: 149
-  }
+  },
+  text1Pressed: {
+    color: "#FF0000",
+    fontSize: 22,
+    marginTop: 30,
+    marginRight: 295
+  },
 });
 
 export default App;
