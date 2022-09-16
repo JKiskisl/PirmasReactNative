@@ -16,11 +16,6 @@ class App extends Component {
     }
   }
 
-
-  changeColor() {
-    this.setState({ buttonEnabled: !this.state.buttonEnabled });
-  }
-
   render(){
 
 
