@@ -3,8 +3,9 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 const CupertinoButtonGrey3 = (props) => {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.button4}>Button4</Text>
+    <TouchableOpacity style={[styles.container, props.style]}
+    onPress={() => props.onPress()}>
+      <Text style={styles.button1}>Button1</Text>
     </TouchableOpacity>
   );
 }
