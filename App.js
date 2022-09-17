@@ -16,6 +16,10 @@ class App extends Component {
     }
   }
 
+  changeColor = (selected) => {
+    this.setState({[selected]: !this.state[selected]})
+  }
+
   render(){
 
 
@@ -31,7 +35,7 @@ class App extends Component {
           <View style={styles.cupertinoButtonGreyRow}>
             <CupertinoButtonGrey
               style={styles.cupertinoButtonGrey} onPress={() => {
-                this.setState({buttonEnabled: !this.state.buttonEnabled})
+                this.changeColor(buttonEnabled)
               }} disabled={!this.state.buttonEnabled}>
             </CupertinoButtonGrey>
             <CupertinoButtonGrey1

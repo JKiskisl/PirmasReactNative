@@ -5,7 +5,7 @@ const CupertinoButtonGrey3 = (props) => {
   return (
     <TouchableOpacity style={[styles.container, props.style]}
     onPress={() => props.onPress()}>
-      <Text style={styles.button1}>Button1</Text>
+      <Text style={styles.button1}>Button4</Text>
     </TouchableOpacity>
   );
 }
